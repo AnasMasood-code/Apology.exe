@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I'm Sorry</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #fbd3e9, #fce2ec);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #d63384;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      color: #fff;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .love {
+      font-size: 1.5rem;
+      color: #d63384;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 2rem;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>I'm Sorry</h1>
+    <p>
+      I know I hurt you. I understand why you're upset, and you deserve more than words—but this is me starting, with all the sincerity I have.
+    </p>
+    <div class="love">Love you my laibu ❤️</div>
+  </div>
+
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 3 + Math.random() * 4 + 's';
+      heart.style.top = -(Math.random() * 100) + 'px';
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
